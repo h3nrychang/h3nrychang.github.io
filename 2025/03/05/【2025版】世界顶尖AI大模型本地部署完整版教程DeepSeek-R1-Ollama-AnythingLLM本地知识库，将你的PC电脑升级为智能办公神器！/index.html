@@ -28,7 +28,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/cover/%E3%80%902025%E7%89%88%E3%80%91%E4%B8%96%E7%95%8C%E9%A1%B6%E5%B0%96AI%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%AE%8C%E6%95%B4%E7%89%88%E6%95%99%E7%A8%8BDeepSeek-R1+Ollama+AnythingLLM%E6%9C%AC%E5%9C%B0%E7%9F%A5%E8%AF%86%E5%BA%93%EF%BC%8C%E5%B0%86%E4%BD%A0%E7%9A%84PC%E7%94%B5%E8%84%91%E5%8D%87%E7%BA%A7%E4%B8%BA%E6%99%BA%E8%83%BD%E5%8A%9E%E5%85%AC%E7%A5%9E%E5%99%A8%EF%BC%81.png">
 <meta property="article:published_time" content="2025-03-05T02:07:04.000Z">
-<meta property="article:modified_time" content="2025-03-06T06:04:49.167Z">
+<meta property="article:modified_time" content="2025-03-07T02:51:53.355Z">
 <meta property="article:author" content="Henry Chang">
 <meta property="article:tag" content="DeepSeek">
 <meta property="article:tag" content="Ollama">
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k words
+          1.8k words
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          9 mins
+          15 mins
         
       </span>
     
@@ -291,7 +291,7 @@
 <th align="center">最低显存大小</th>
 <th align="center">推荐GPU型号</th>
 <th align="center">RAM要求</th>
-<th align="center">适合场景</th>
+<th align="center">常见场景</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -374,8 +374,125 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ollama <span class="hljs-built_in">rm</span> xxxxxx<br></code></pre></td></tr></table></figure>
 
 
+<h3 id="通过OLLAMA本地部署Deepseek大模型"><a href="#通过OLLAMA本地部署Deepseek大模型" class="headerlink" title="通过OLLAMA本地部署Deepseek大模型"></a>通过OLLAMA本地部署Deepseek大模型</h3><p>DeepSeek 开源的大模型，有些小伙伴在本地部署下载 DeepSeek 模型时会看到 Qwen 与 Llama 蒸馏模型，以及 Q2、Q3、Q4、Q5、Q8 等的代号，还有面对1.5~671B的众多型号尺寸的deepseek大模型，我们应该如何选择适合自己电脑的模型呢？如果在常见PC上运行deepseek的话，可以从下面的表格中选择：</p>
+<table>
+<thead>
+<tr>
+<th align="center">模型名称</th>
+<th align="center">参数量</th>
+<th align="center">基础架构</th>
+<th align="center">适合场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">DeepSeek-R1-Distill-Qwen-1.5B</td>
+<td align="center">1.5B</td>
+<td align="center">Qwen2.5</td>
+<td align="center">适合移动设备</td>
+</tr>
+<tr>
+<td align="center">DeepSeek-R1-Distill-Qwen-7B</td>
+<td align="center">7B</td>
+<td align="center">Qwen2.5</td>
+<td align="center">适合普通文本生成工具</td>
+</tr>
+<tr>
+<td align="center">DeepSeek-R1-Distill-Llama-8B</td>
+<td align="center">8B</td>
+<td align="center">Llama3.1</td>
+<td align="center">适合小型企业日常文本处理</td>
+</tr>
+<tr>
+<td align="center">DeepSeek-R1-Distill-Qwen-14B</td>
+<td align="center">14B</td>
+<td align="center">Qwen2.5</td>
+<td align="center">适合桌面级应用</td>
+</tr>
+<tr>
+<td align="center">DeepSeek-R1-Distill-Qwen-32B</td>
+<td align="center">32B</td>
+<td align="center">Qwen2.5</td>
+<td align="center">适合专业领域知识问答系统</td>
+</tr>
+<tr>
+<td align="center">DeepSeek-R1-Distill-Llama-70B</td>
+<td align="center">70B</td>
+<td align="center">Llama3.3</td>
+<td align="center">适合科研、学术研究等高要求场景</td>
+</tr>
+</tbody></table>
+<hr>
+<h4 id="Qwen和Llama的区别"><a href="#Qwen和Llama的区别" class="headerlink" title="Qwen和Llama的区别"></a>Qwen和Llama的区别</h4><div class="note note-primary">
+            <p>Qwen (通义千问)</p>
+          </div>
+<p><strong>开发者</strong>：阿里巴巴达摩院<br><strong>架构</strong>：基于 Transformer，支持更长上下文窗口<br><strong>训练数据</strong>：侧重中文语料，兼顾多语言<br><strong>应用场景</strong>：中文 NLP 任务优化  </p>
+<div class="note note-info">
+            <p>Llama (Meta)</p>
+          </div>
+<p><strong>开发者</strong>：Meta (Facebook)<br><strong>架构</strong>：基于 Transformer，优化稀疏注意力机制<br><strong>训练数据</strong>：以英文为主，涵盖部分多语言数据<br><strong>应用场景</strong>：通用任务，适配英文环境更好  </p>
+<h4 id="量化介绍"><a href="#量化介绍" class="headerlink" title="量化介绍"></a>量化介绍</h4><p>Q2、Q3、Q4、Q5、Q8 的代号属于模型量化技术的标识符，主要取决于量化工具（如 GGUF 格式）。量化旨在降低模型存储和计算成本，常见规则如下：</p>
+<p><strong>Q2_K</strong></p>
+<ul>
+<li>位宽：2-bit</li>
+<li>精度损失：高</li>
+<li>内存占用：极低</li>
+<li>推理速度：极快</li>
+</ul>
+<p><strong>Q3_K_M</strong></p>
+<ul>
+<li>位宽：3-bit</li>
+<li>精度损失：中</li>
+<li>内存占用：低</li>
+<li>推理速度：快</li>
+</ul>
+<p><strong>Q4_K_S</strong></p>
+<ul>
+<li>位宽：4-bit</li>
+<li>精度损失：低</li>
+<li>内存占用：中等</li>
+<li>推理速度：中等</li>
+</ul>
+<p><strong>Q5_K_M</strong></p>
+<ul>
+<li>位宽：5-bit</li>
+<li>精度损失：极低</li>
+<li>内存占用：较高</li>
+<li>推理速度：较慢</li>
+</ul>
+<p><strong>Q8_0</strong></p>
+<ul>
+<li>位宽：8-bit</li>
+<li>精度损失：可忽略</li>
+<li>内存占用：高</li>
+<li>推理速度：慢</li>
+</ul>
+<h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><p>在本地电脑进行部署模型时，如果电脑没有独立显卡，推荐部署1.5B的无量化版本，有独立显卡可以尝试7B的无量化或14B的量化版本</p>
+<h3 id="OLLAMA高级功能"><a href="#OLLAMA高级功能" class="headerlink" title="OLLAMA高级功能"></a>OLLAMA高级功能</h3><h4 id="通用功能"><a href="#通用功能" class="headerlink" title="通用功能"></a>通用功能</h4><p>查看日志</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ollama logs<br></code></pre></td></tr></table></figure>
+<p>清理缓存</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ollama clean<br></code></pre></td></tr></table></figure>
+<p>查看模型详细信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ollama show &lt;model-name&gt;<br></code></pre></td></tr></table></figure>
+<p>查看模型配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ollama config &lt;model-name&gt;<br></code></pre></td></tr></table></figure>
+<p>查看模型性能信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ollama perf &lt;model-name&gt;<br></code></pre></td></tr></table></figure>
 
-<h3 id="通过OLLAMA本地部署Deepseek大模型"><a href="#通过OLLAMA本地部署Deepseek大模型" class="headerlink" title="通过OLLAMA本地部署Deepseek大模型"></a>通过OLLAMA本地部署Deepseek大模型</h3><h3 id="OLLAMA高级功能"><a href="#OLLAMA高级功能" class="headerlink" title="OLLAMA高级功能"></a>OLLAMA高级功能</h3><h2 id="安装AnythingLLM"><a href="#安装AnythingLLM" class="headerlink" title="安装AnythingLLM"></a>安装AnythingLLM</h2><h2 id="导入知识库文件"><a href="#导入知识库文件" class="headerlink" title="导入知识库文件"></a>导入知识库文件</h2><h2 id="任务理解"><a href="#任务理解" class="headerlink" title="任务理解"></a>任务理解</h2>
+<h4 id="自定义模型"><a href="#自定义模型" class="headerlink" title="自定义模型"></a>自定义模型</h4><ol>
+<li>创建自定义模型<br>基于现有模型创建自定义模型：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ollama create &lt;custom-model-name&gt; -f &lt;Modelfile&gt;<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>复制模型<br>复制一个已经存在的模型：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ollama <span class="hljs-built_in">cp</span> &lt;source-model-name&gt; &lt;new-model-name&gt;<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>推送自定义模型到平台或模型库<br>将自定义模型推送到模型库：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ollama push &lt;model-name&gt;<br></code></pre></td></tr></table></figure>
+
+<h2 id="安装AnythingLLM"><a href="#安装AnythingLLM" class="headerlink" title="安装AnythingLLM"></a>安装AnythingLLM</h2><p>官方网址：<a target="_blank" rel="noopener" href="https://anythingllm.com/desktop">点击前往</a></p>
+<h2 id="导入知识库文件"><a href="#导入知识库文件" class="headerlink" title="导入知识库文件"></a>导入知识库文件</h2><h2 id="任务理解"><a href="#任务理解" class="headerlink" title="任务理解"></a>任务理解</h2>
                 
               </div>
             
@@ -560,6 +677,32 @@
     </div>
   
   
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        Views: 
+        <span id="leancloud-site-pv"></span>
+        
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        Visitors: 
+        <span id="leancloud-site-uv"></span>
+        
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
   
 </div>
 
@@ -689,6 +832,8 @@
   <script>Fluid.plugins.imageCaption();</script>
 
   <script  src="/js/local-search.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
 
 
 
